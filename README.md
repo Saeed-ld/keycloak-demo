@@ -6,12 +6,6 @@ Users are assigned to groups, and each group has its own role. The Flask applica
 
 ## Running Keycloak
 
-Load the provided Docker image:
-
-```bash
-docker load -i keycloak-image.tar
-```
-
 Start the container:
 
 ```bash
@@ -27,6 +21,8 @@ docker run -d \
 Keycloak will be available at:
 
 `http://localhost:8080`
+
+Log in using the admin credentials above. You must create and configure your own realm, client, users, groups, and roles in Keycloak before testing the application. Make sure the role names match those used in `app.py`.
 
 ## Running the Flask application
 
@@ -44,9 +40,11 @@ Start the application:
 python app.py
 ```
 
-The application will run at `http://localhost:8081`.
+The Flask application will be available at:
 
-## Test endpoints
+`http://localhost:8081`
+
+## Available endpoints
 
 - `/engineering` – requires the `engineering-access` role.
 - `/finance` – requires the `finance-access` role.
